@@ -1,7 +1,7 @@
 package bean;
 
 /**
- *
+ * 一个java class
  */
 public class Cat {
     private String name;

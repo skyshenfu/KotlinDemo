@@ -52,8 +52,6 @@ suspend fun test3(){
         search2()
     }
     println("${one.await()}and${two.await()}")
-    val lock=ReentrantLock()
-    lock.withLock {  }
 }
 //test4开启
 suspend fun test4(){
