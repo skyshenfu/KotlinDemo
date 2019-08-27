@@ -7,7 +7,7 @@
         <kotlin.version>1.3.31</kotlin.version>
     </properties>
     <groupId>pain</groupId>
-    <artifactId>KotlinCoroutineDemo</artifactId>
+    <artifactId>KotlinDemo</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
