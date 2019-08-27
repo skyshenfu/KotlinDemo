@@ -1,5 +1,8 @@
+import bean.Cat
+import bean.DemoObject
+import bean.Food
 
-class Person(val name:String,var age:Int){
+class Person(val name:String, var age:Int){
     override fun toString(): String {
         return "$name:$age";
     }
@@ -13,9 +16,9 @@ fun main() {
     var pai=3.1415926
 
     //调用get方法
-    val time=DemoObject().time
+    val time= DemoObject().time
     //调用伴生方法
-    var canReleaseMemory=DemoObject.enable
+    var canReleaseMemory= DemoObject.enable
 
     //使用默认参数
     add(5)
@@ -26,13 +29,15 @@ fun main() {
     //使用扩展函数
     println(str.lastChar())
 
+    //构建一个列表这种方式构建的list是一个只读的
     val personList= listOf(Person("张三",60),Person("李四",20),Person("王五",25))
 
+    //filter筛选
     println(personList.filter {
         it.age>20
 
     })
-
+    //map映射修改
     personList.map {
         if (it.name=="王五"){
             it.age=33
@@ -43,7 +48,8 @@ fun main() {
     println(Cat("Tom").eat(Food("鱼")))
     println(Cat("Garfield").eatWithFrom(Food("奶酪")))
     println(Cat.say())
-
+    //函数作为参数
+    trySomething { paramFunction(2) }
 
 
 }
@@ -54,6 +60,15 @@ fun main() {
         return result
     }
 
-    //为Sting声明一个扩展方法
+    //扩展函数:为Sting声明一个扩展方法
     fun String.lastChar(): Char = this[this.length - 1]
 
+    //
+    fun paramFunction(int1:Int){
+    print(int1)
+    }
+
+    //接收函数作为参数
+    fun <T> trySomething(action:()->T):T{
+        return  action()
+    }
